@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+body{    
+    background-color: rgb(12, 12, 212);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container{
+    background-color: white;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    margin-bottom: 50px;
+}
+
+.cell{
+    background-color: white;
+    border: 1px solid rgb(226, 226, 226);
+   
+}
+
+.cell:hover{
+    background-color: rgb(72, 163, 241);
+}
+
+#container>.clicked{
+    background-color: black;
+}
+
+#menu{
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h3{
+    color:white;
+    align-self: center;
+    font-size: 42px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+button{
+    padding: 8px;
+    background-color: gold;
+    color:blue;
+    border: 1px solid white;
+    border-radius: 8px; 
+}
+.btn{
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#colorMenu{
+    width: 250px;
+    height: 100px;
+    background-color: white;
+    align-self: center; 
+    display: flex;
+    flex-flow: row wrap; 
+    align-items: stretch;
+}
+
+#main{
+    display:flex;
+    flex-direction: column;
+}
+
+.color{
+    width: 50px;
+    height: 50px;
+    background-color: aquamarine;
+    border: 1px solid black;
+
+}
+#colorMenu>.clicked{
+    background-color: black;
+}
+
