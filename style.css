@@ -15,8 +15,8 @@ body{
 
 #container{
     background-color: white;
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
@@ -64,13 +64,14 @@ button{
     justify-content: space-evenly;
 }
 #colorMenu{
-    width: 250px;
-    height: 100px;
+    width: 252px;
+    height: 102px;
     background-color: white;
     align-self: center; 
     display: flex;
     flex-flow: row wrap; 
     align-items: stretch;
+    border:1px solid white;
 }
 
 #main{
@@ -78,14 +79,42 @@ button{
     flex-direction: column;
 }
 
-.color{
+#color{
     width: 50px;
     height: 50px;
-    background-color: aquamarine;
-    border: 1px solid black;
 
 }
 #colorMenu>.clicked{
-    background-color: black;
+    opacity: 0.3;
 }
 
+.red{
+    background-color: rgb(255, 0, 0);
+}
+.green{
+    background-color: rgb(122, 201, 4);
+}
+.blue{
+    background-color: rgb(0, 0, 255);
+}
+.yellow{
+    background-color: rgb(255, 255, 11);
+}
+.brown{
+    background-color: rgb(128, 42, 42);
+}
+.black{
+    background-color: rgb(0, 0, 0);
+}
+.white{
+    background-color: rgb(255, 255, 255);
+}
+.cyan{
+    background-color: rgb(0, 252, 252);
+}
+.orange{
+    background-color: rgb(255, 166, 0);
+}
+.pink{
+    background-color: rgb(255, 192, 203);
+}

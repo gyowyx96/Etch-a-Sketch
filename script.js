@@ -1,6 +1,6 @@
 const container = document.getElementById("container");
 let mousedown = false;
-let color = "";
+let color = "black";
 
 container.addEventListener("mousedown", () =>{
     mousedown = true;
@@ -24,18 +24,18 @@ function draw(){
     
     for (let cell of myDiv){
         cell.addEventListener("mousedown", () =>{
-            cell.classList.add("clicked");
+            cell.style.backgroundColor= color;
         })
         cell.addEventListener("mousemove", () =>{
             if (mousedown)
-            cell.classList.add("clicked");
+                cell.style.backgroundColor= color;
         })
     }
 }
 
 function createSmallGrid(){
     gridSize=16*16;
-    cellSize=25;
+    cellSize=600/16;
     gridCreate(gridSize,cellSize);
     document.getElementById("medium").disabled = false;
     document.getElementById("small").disabled= true;
@@ -45,7 +45,7 @@ function createSmallGrid(){
 
 function createMediumGrid(){
     gridSize=32*32;
-    cellSize=400/32;
+    cellSize=600/32;
     gridCreate(gridSize,cellSize);
     document.getElementById("medium").disabled = true;
     document.getElementById("small").disabled= false;
@@ -55,7 +55,7 @@ function createMediumGrid(){
 
 function createBigGrid(){
     gridSize=64*64;
-    cellSize=400/64;
+    cellSize=600/64;
     gridCreate(gridSize,cellSize);
     document.getElementById("medium").disabled = false;
     document.getElementById("small").disabled= false;
@@ -63,15 +63,33 @@ function createBigGrid(){
     draw();
 }
 
-const colors = document.querySelectorAll(".color");
+const colors = document.querySelectorAll("#color");
 colorMenu = Array.from(colors);
+console.log(colorMenu);
+
 colorMenu.forEach((div) =>{
-    div.addEventListener("click", () =>{
+    removeClass();
+    div.addEventListener("click", (e) =>{        
+        removeClass();
+        color = e.target.className;
+        console.log(color);
         div.classList.add("clicked");
-        console.log(div);
+        
     })
 })
 
+function removeClass(){
+    colorMenu.forEach((div)=>{
+        div.classList.remove("clicked");
+    })
+}
+
+function removeColor(){
+    let myDiv = document.querySelectorAll(".cell");
+    myDiv.forEach((div)=>{
+        div.classList.remove(color);
+    })
+}
 
 
 
