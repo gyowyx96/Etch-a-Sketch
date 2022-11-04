@@ -6,19 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a Sketch</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
 </head>
-<body>
+<body ondragstart="return false;" ondrop="return false;">
+    
     <div id="menu">
-        <h3>SET SIZE</h3>
+        <h3>ETCH A SKETCH</h3>
         <div class="btn">
-            <button onclick="createSmallGrid()" id="small">Grid 16*16</button>
-            <button onclick="createMediumGrid()" id="medium">Grid 32*32</button>
-            <button onclick="createBigGrid()" id="big">Grid 64*64</button>
+            <button onclick="createSmallGrid()" id="small">Grid 16x16</button>
+            <button onclick="createMediumGrid()" id="medium">Grid 32x32</button>
+            <button onclick="createBigGrid()" id="big">Grid 64x64</button>
         </div>
     </div>
     <div id="main">
-        <div id="container"></div>
-        <div id="colorMenu">
+        
+            
+            
+        
+    <div id="container"></div>
+    <div id="underMenu">
+       
+        <div id="colorMenu">            
             <div id="color" class="red"></div>
             <div id="color" class="green"></div>
             <div id="color" class="blue"></div>
@@ -28,14 +38,13 @@
             <div id="color" class="white"></div>
             <div id="color" class="cyan"></div>
             <div id="color" class="orange"></div>
-            <div id="color" class="pink"></div>
-            
-            
-            
+            <div id="color" class="pink"></div>            
         </div>
-        
+        <div id="gridSettings">
+            <button onclick="clearGrid()" id="clear">Clear Grid</button>
+            <button onclick="setBackgroundLines()" id="reset">Background lines</button>
+        </div>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
