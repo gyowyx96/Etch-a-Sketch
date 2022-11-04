@@ -1,15 +1,15 @@
-const container = document.getElementById("container");
+const container = document.getElementById("container");   //a few variable
 let mousedown = false;
 let color = "black";
 
-container.addEventListener("mousedown", () =>{
+container.addEventListener("mousedown", () =>{ //give us a value if the mouse is clicked
     mousedown = true;
 });
-container.addEventListener("mouseup", () =>{
+container.addEventListener("mouseup", () =>{ //return us the opposite input if the mouse is released 
     mousedown = false;
 });
 
-function gridCreate(gridSize, cellSize){
+function gridCreate(gridSize, cellSize){  //create the grid from preselected measure 
     container.replaceChildren();    
     for(let i = 0; i<gridSize; i++){    
         const div = document.createElement("div");
@@ -19,8 +19,8 @@ function gridCreate(gridSize, cellSize){
     }
 }
 
-function draw(){
-    let myDiv = document.querySelectorAll(".cell");  //non adda l'hover ma con il click mette la classe
+function draw(){ //draw the lines changing the bg color of the divs
+    let myDiv = document.querySelectorAll(".cell");  
     
     for (let cell of myDiv){
         cell.addEventListener("mousedown", () =>{
@@ -33,7 +33,10 @@ function draw(){
     }
 }
 
+createSmallGrid(); //starting grid
+
 function createSmallGrid(){
+    console.log("small");
     gridSize=16*16;
     cellSize=600/16;
     gridCreate(gridSize,cellSize);
@@ -63,11 +66,11 @@ function createBigGrid(){
     draw();
 }
 
-const colors = document.querySelectorAll("#color");
+const colors = document.querySelectorAll("#color");  //get the color menu from the html
 colorMenu = Array.from(colors);
 console.log(colorMenu);
 
-colorMenu.forEach((div) =>{
+colorMenu.forEach((div) =>{   //set the color and change the clicked color icon
     removeClass();
     div.addEventListener("click", (e) =>{        
         removeClass();
@@ -75,26 +78,45 @@ colorMenu.forEach((div) =>{
         console.log(color);
         div.classList.add("clicked");
         
+        
     })
 })
 
-function removeClass(){
-    colorMenu.forEach((div)=>{
+function removeClass(){  //remove a class (used for the colors)
+    colorMenu.forEach((div) =>{
         div.classList.remove("clicked");
     })
 }
 
-function removeColor(){
+function removeColor(){  //not used
     let myDiv = document.querySelectorAll(".cell");
     myDiv.forEach((div)=>{
         div.classList.remove(color);
     })
 }
+let border = "false";
+function setBackgroundLines(){
+    let cells = document.querySelectorAll(".cell");
+    if (border === "false"){
+        border = "true";
+        for (let cell of cells){
+            cell.style.border= "1px solid rgb(226,226,226";           
+        }
+    }
+    else{
+        border = "false";
+        for (let cell of cells){
+            cell.style.border="none";
+        }
+    }
+}
 
-
-
-
-
-
+function clearGrid(){
+    console.log("clear");
+    let myDiv = document.querySelectorAll(".cell");
+    for (let cells of myDiv){
+        cells.style.backgroundColor="white";
+    }
+}
 
     
